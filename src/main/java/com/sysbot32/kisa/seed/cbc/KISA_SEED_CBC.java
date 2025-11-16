@@ -2,7 +2,7 @@ package com.sysbot32.kisa.seed.cbc;
 
 /**
 @file KISA_SEED_CBC.java
-@brief SEED CBC ¾ÏÈ£ ¾Ë°í¸®Áò
+@brief SEED CBC ì•”í˜¸ ì•Œê³ ë¦¬ì¦˜
 @author Copyright (c) 2013 by KISA
 @remarks http://seed.kisa.or.kr/
 */
@@ -392,7 +392,7 @@ public class KISA_SEED_CBC {
 
 
 	public static int SEED_CBC_init( KISA_SEED_INFO pInfo, KISA_ENC_DEC enc, byte[] pbszUserKey, byte[] pbszIV ) {
-		int ABCD[] = new int[4];			// Iuput/output values at each rounds(°¢ ¶ó¿îµå ÀÔ/Ãâ·Â)
+		int ABCD[] = new int[4];			// Iuput/output values at each rounds(ê° ë¼ìš´ë“œ ì…/ì¶œë ¥)
 		int T[] = new int[2];				// Temporary variable
 		int K[];
 
@@ -906,7 +906,7 @@ public class KISA_SEED_CBC {
 		}
 		
 		//Padding : PKSC #7
-		//Ãâ·Â : PADDING ÈÄ ±æÀÌ(¹ÙÀÌÆ®´ÜÀ§)
+		//ì¶œë ¥ : PADDING í›„ ê¸¸ì´(ë°”ì´íŠ¸ë‹¨ìœ„)
 		public static int Padding(byte[] pbData, byte[] padData, int length) {
 			int i;
 			int padvalue = 16 - (length%16);
@@ -920,7 +920,7 @@ public class KISA_SEED_CBC {
 		}
 		
 		
-		//1ºí·°(128ºñÆ® XOR)
+		//1ë¸”ëŸ­(128ë¹„íŠ¸ XOR)
 		public static void BLOCK_XOR_PROPOSAL(int[] OUT_VALUE, int out_value_offset, int[] IN_VALUE1, int in_value1_offset, int[] IN_VALUE2, int in_value2_offset) {
 			OUT_VALUE[out_value_offset+0] = (in_value1_offset<IN_VALUE1.length?IN_VALUE1[in_value1_offset+0]:0) ^ (in_value2_offset<IN_VALUE2.length?IN_VALUE2[in_value2_offset+0]:0);
 			OUT_VALUE[out_value_offset+1] = (in_value1_offset+1<IN_VALUE1.length?IN_VALUE1[in_value1_offset+1]:0) ^ (in_value2_offset+1<IN_VALUE2.length?IN_VALUE2[in_value2_offset+1]:0);
@@ -934,7 +934,7 @@ public class KISA_SEED_CBC {
 	
 
 	public static int SeedRoundKey( KISA_SEED_INFO pInfo, KISA_ENC_DEC enc, byte[] pbszUserKey, byte[] pbszIV ) {
-		int ABCD[] = new int[4];			// Iuput/output values at each rounds(°¢ ¶ó¿îµå ÀÔ/Ãâ·Â)
+		int ABCD[] = new int[4];			// Iuput/output values at each rounds(ê° ë¼ìš´ë“œ ì…/ì¶œë ¥)
 		int T[] = new int[2];				// Temporary variable
 		int K[];
 
@@ -1037,7 +1037,7 @@ public class KISA_SEED_CBC {
 		
 		
 		
-		System.out.print("[ Test Encrypt mode : ¹æ¹ı 1 ]"+"\n");
+		System.out.print("[ Test Encrypt mode : ë°©ë²• 1 ]"+"\n");
 		System.out.print("Key\t\t\t\t: ");
 	    for (int i=0; i<16; i++)	System.out.print(Integer.toHexString(0xff&pbUserKey[i])+" ");
 	    System.out.print("\n");
@@ -1149,13 +1149,13 @@ public class KISA_SEED_CBC {
 	    /*****************************************************************
 	    /*****************************************************************
 	    /*****************************************************************
-	     * ¹æ¹ı2
+	     * ë°©ë²•2
 	     ******************************************************************/
 	        
 	    
 	    PLAINTEXT_LENGTH = 14;
 	    
-		System.out.print("\n\n[ Test Encrypt mode : ¹æ¹ı 2 ]"+"\n");
+		System.out.print("\n\n[ Test Encrypt mode : ë°©ë²• 2 ]"+"\n");
 		System.out.print("Key\t\t\t\t: ");
 	    for (int i=0; i<16; i++)	System.out.print(Integer.toHexString(0xff&pbUserKey[i])+", ");
 	    System.out.print("\n");
@@ -1168,10 +1168,10 @@ public class KISA_SEED_CBC {
 	    
 	    
 	    /************************************************************************************************
-	     * Ã¹¹øÂ°
+	     * ì²«ë²ˆì§¸
 	     */
 	    
-	    // ¾ÏÈ£È­
+	    // ì•”í˜¸í™”
 	    
 	    KISA_SEED_INFO info = new KISA_SEED_INFO();
 		int[] data;
@@ -1192,7 +1192,7 @@ public class KISA_SEED_CBC {
 
 		SEED_CBC_init( info, KISA_ENC_DEC.KISA_ENCRYPT, pbUserKey, bszIV );
 		
-		int process_blockLeng = BLOCK_SIZE_SEED * 2;								//ÇÑ¹ø¿¡ Ã³¸®ÇÒ BLOCK
+		int process_blockLeng = BLOCK_SIZE_SEED * 2;								//í•œë²ˆì— ì²˜ë¦¬í•  BLOCK
 		
 		int[] outbuf = new int[process_blockLeng/4];
 		
@@ -1250,7 +1250,7 @@ public class KISA_SEED_CBC {
 	    
 	    
 	    
-	    // º¹È£È­
+	    // ë³µí˜¸í™”
 	    
 	    info = new KISA_SEED_INFO();
 	    CIPHERTEXT_LENGTH = 16;
@@ -1358,7 +1358,7 @@ public class KISA_SEED_CBC {
 	    
 	    
 	    /*******************************************************************************************************
-	     * µÎ¹øÂ° t.v
+	     * ë‘ë²ˆì§¸ t.v
 	     */    
 		
 		info = new KISA_SEED_INFO();
@@ -1377,7 +1377,7 @@ public class KISA_SEED_CBC {
 
 		SEED_CBC_init( info, KISA_ENC_DEC.KISA_ENCRYPT, pbUserKey, bszIV );
 		
-		process_blockLeng = BLOCK_SIZE_SEED * 2;								//ÇÑ¹ø¿¡ Ã³¸®ÇÒ BLOCK
+		process_blockLeng = BLOCK_SIZE_SEED * 2;								//í•œë²ˆì— ì²˜ë¦¬í•  BLOCK
 		
 
 		outbuf = new int[process_blockLeng/4];
@@ -1438,10 +1438,10 @@ public class KISA_SEED_CBC {
 		
 		
 		/**
-		 * º¹È£È­
+		 * ë³µí˜¸í™”
 		 */
 		
-	    // º¹È£È­
+	    // ë³µí˜¸í™”
 	    
 	    info = new KISA_SEED_INFO();
 	    CIPHERTEXT_LENGTH = 16;
@@ -1537,7 +1537,7 @@ public class KISA_SEED_CBC {
 		
 		
 	    /*******************************************************************************************************
-	     * ¼¼¹øÂ° t.v
+	     * ì„¸ë²ˆì§¸ t.v
 	     */    
 	    
 	    PLAINTEXT_LENGTH = 16;
@@ -1553,7 +1553,7 @@ public class KISA_SEED_CBC {
 
 		SEED_CBC_init( info, KISA_ENC_DEC.KISA_ENCRYPT, pbUserKey, bszIV );
 		
-		process_blockLeng = BLOCK_SIZE_SEED * 2;								//ÇÑ¹ø¿¡ Ã³¸®ÇÒ BLOCK
+		process_blockLeng = BLOCK_SIZE_SEED * 2;								//í•œë²ˆì— ì²˜ë¦¬í•  BLOCK
 		
 
 		outbuf = new int[process_blockLeng/4];
@@ -1614,10 +1614,10 @@ public class KISA_SEED_CBC {
 		
 		
 		/**
-		 * º¹È£È­
+		 * ë³µí˜¸í™”
 		 */
 		
-	    // º¹È£È­
+	    // ë³µí˜¸í™”
 	    
 	    info = new KISA_SEED_INFO();
 	    CIPHERTEXT_LENGTH = 32;
@@ -1714,7 +1714,7 @@ public class KISA_SEED_CBC {
 		
 		
 	    /*******************************************************************************************************
-	     * ³×¹øÂ° t.v
+	     * ë„¤ë²ˆì§¸ t.v
 	     */    
 	    
 	    PLAINTEXT_LENGTH = 18;
@@ -1730,7 +1730,7 @@ public class KISA_SEED_CBC {
 
 		SEED_CBC_init( info, KISA_ENC_DEC.KISA_ENCRYPT, pbUserKey, bszIV );
 		
-		process_blockLeng = BLOCK_SIZE_SEED * 2;								//ÇÑ¹ø¿¡ Ã³¸®ÇÒ BLOCK
+		process_blockLeng = BLOCK_SIZE_SEED * 2;								//í•œë²ˆì— ì²˜ë¦¬í•  BLOCK
 		
 
 		outbuf = new int[process_blockLeng/4];
@@ -1791,10 +1791,10 @@ public class KISA_SEED_CBC {
 		
 		
 		/**
-		 * º¹È£È­
+		 * ë³µí˜¸í™”
 		 */
 		
-	    // º¹È£È­
+	    // ë³µí˜¸í™”
 	    
 	    info = new KISA_SEED_INFO();
 	    CIPHERTEXT_LENGTH = 32;

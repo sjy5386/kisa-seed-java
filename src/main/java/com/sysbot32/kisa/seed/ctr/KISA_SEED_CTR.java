@@ -2,7 +2,7 @@ package com.sysbot32.kisa.seed.ctr;
 
 /**
 @file KISA_SEED_CTR.java
-@brief SEED CTR ¾ÏÈ£ ¾Ë°í¸®Áò
+@brief SEED CTR ì•”í˜¸ ì•Œê³ ë¦¬ì¦˜
 @author Copyright (c) 2013 by KISA
 @remarks http://seed.kisa.or.kr/
 */
@@ -266,10 +266,10 @@ public class KISA_SEED_CTR {
 	}
 
 	/**
-	@brief byte ¹è¿­À» int ¹è¿­·Î º¯È¯ÇÑ´Ù.
-	@param in :º¯È¯ÇÒ byte Æ÷ÀÎÅÍ
-	@param nLen : º¯È¯ÇÒ byte ¹è¿­ °¹¼ö
-	@return ÀÎÀÚ·Î ¹ŞÀº byte ¹è¿­ÀÇ int·Î º¯È¯µÈ Æ÷ÀÎÅÍ¸¦ ¹İÈ¯ÇÑ´Ù.
+	@brief byte ë°°ì—´ì„ int ë°°ì—´ë¡œ ë³€í™˜í•œë‹¤.
+	@param in :ë³€í™˜í•  byte í¬ì¸í„°
+	@param nLen : ë³€í™˜í•  byte ë°°ì—´ ê°¯ìˆ˜
+	@return ì¸ìë¡œ ë°›ì€ byte ë°°ì—´ì˜ intë¡œ ë³€í™˜ëœ í¬ì¸í„°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 */
 	public static int[] chartoint32_for_SEED_CTR(byte[] in, int inLen) {
 		int[] data;
@@ -291,10 +291,10 @@ public class KISA_SEED_CTR {
 	}
 
 	/**
-	@brief int ¹è¿­À» byte ¹è¿­·Î º¯È¯ÇÑ´Ù.
-	@param in :º¯È¯ÇÒ int Æ÷ÀÎÅÍ
-	@param nLen : º¯È¯ÇÒ int ¹è¿­ °¹¼ö
-	@return ÀÎÀÚ·Î ¹ŞÀº int ¹è¿­À» byte·Î º¯È¯ÇÑ Æ÷ÀÎÅÍ¸¦ ¹İÈ¯ÇÑ´Ù.
+	@brief int ë°°ì—´ì„ byte ë°°ì—´ë¡œ ë³€í™˜í•œë‹¤.
+	@param in :ë³€í™˜í•  int í¬ì¸í„°
+	@param nLen : ë³€í™˜í•  int ë°°ì—´ ê°¯ìˆ˜
+	@return ì¸ìë¡œ ë°›ì€ int ë°°ì—´ì„ byteë¡œ ë³€í™˜í•œ í¬ì¸í„°ë¥¼ ë°˜í™˜í•œë‹¤.
 	 */
 	public static byte[] int32tochar_for_SEED_CTR(int in[], int inLen) {
 		byte[] data;
@@ -778,10 +778,10 @@ public class KISA_SEED_CTR {
 		
 		
 	    /*******************************************************************************************
-	     * ¹æ¹ı 1
+	     * ë°©ë²• 1
 	     *******************************************************************************************/
 
-		System.out.print("[ Test SEED CTR reference code ] ¹æ¹ı 1"+"\n");
+		System.out.print("[ Test SEED CTR reference code ] ë°©ë²• 1"+"\n");
 		System.out.print("\n\n");
 		System.out.print("[ Test Encrypt mode ]"+"\n");
 		System.out.print("Key\t\t: ");
@@ -798,7 +798,7 @@ public class KISA_SEED_CTR {
 
 	    
 	    /*******************************************************************************************
-	     * ¹æ¹ı 1
+	     * ë°©ë²• 1
 	     *******************************************************************************************/
 	    
  
@@ -852,22 +852,22 @@ public class KISA_SEED_CTR {
 	    
 	    
 	    /**********************************************************
-	     * ¹æ¹ı 2
+	     * ë°©ë²• 2
 	     ***********************************************************/	    
 	    
 	    
 	    
-		System.out.print("\n\n[ Test SEED reference code CTR] ¹æ¹ı 2"+"\n");
+		System.out.print("\n\n[ Test SEED reference code CTR] ë°©ë²• 2"+"\n");
 		System.out.print("\n");
 		
 	    /**********************************************************
-	     * ¹æ¹ı 2
+	     * ë°©ë²• 2
 	     ***********************************************************/
 		
 		
 		
 		/***************
-		 * Å×½ºÆ®º¤ÅÍ 1 (¾ÏÈ£È­)
+		 * í…ŒìŠ¤íŠ¸ë²¡í„° 1 (ì•”í˜¸í™”)
 		 **************/
 		PLAINTEXT_LENGTH = CIPHERTEXT_LENGTH = 16;	 
 	    
@@ -936,7 +936,7 @@ public class KISA_SEED_CTR {
 		
 		
 		/*************
-		 * º¹È£È­
+		 * ë³µí˜¸í™”
 		 */
 	    
 		
@@ -1004,7 +1004,7 @@ public class KISA_SEED_CTR {
 		
 		
 		/***************
-		 * Å×½ºÆ®º¤ÅÍ 2 (¾ÏÈ£È­)
+		 * í…ŒìŠ¤íŠ¸ë²¡í„° 2 (ì•”í˜¸í™”)
 		 **************/
 		PLAINTEXT_LENGTH = CIPHERTEXT_LENGTH = 8;	 
 	    
@@ -1070,7 +1070,7 @@ public class KISA_SEED_CTR {
 		
 		
 		/*************
-		 * º¹È£È­
+		 * ë³µí˜¸í™”
 		 */
 	    
 		
@@ -1132,7 +1132,7 @@ public class KISA_SEED_CTR {
 		
 		
 		/***************
-		 * Å×½ºÆ®º¤ÅÍ 3 (¾ÏÈ£È­)
+		 * í…ŒìŠ¤íŠ¸ë²¡í„° 3 (ì•”í˜¸í™”)
 		 **************/
 		PLAINTEXT_LENGTH = CIPHERTEXT_LENGTH = 18;	 
 	    
@@ -1198,7 +1198,7 @@ public class KISA_SEED_CTR {
 		
 		
 		/*************
-		 * º¹È£È­
+		 * ë³µí˜¸í™”
 		 */
 	    
 		
