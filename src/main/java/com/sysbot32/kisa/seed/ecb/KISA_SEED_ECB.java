@@ -2,7 +2,7 @@ package com.sysbot32.kisa.seed.ecb;
 
 /**
 @file KISA_SEED_ECB.java
-@brief SEED CBC ��ȣ �˰���
+@brief SEED CBC 암호 알고리즘
 @author Copyright (c) 2013 by KISA
 @remarks http://seed.kisa.or.kr/
 */
@@ -339,9 +339,9 @@ public class KISA_SEED_ECB {
 	/********************************* Decryption *********************************/
 
 	/**
-	@brief Data�� ���� Decrypt
-	@param pbData : ��ȣȭ�� ������ : 16 byte���� ��
-	@param pdwRoundKey : SeedRoundKey()�� ���� ������� Ű
+	@brief Data를 직접 Decrypt
+	@param pbData : 복호화될 데이터 : 16 byte여야 함
+	@param pdwRoundKey : SeedRoundKey()에 의해 만들어진 키
 	*/
 	// Same as encrypt, except that round keys are applied in reverse order
 
@@ -511,7 +511,7 @@ public class KISA_SEED_ECB {
 		
 	
 	public static int SEED_ECB_init( KISA_SEED_INFO pInfo, KISA_ENC_DEC enc, byte[] pbszUserKey) {
-		int ABCD[] = new int[4];			// Iuput/output values at each rounds(�� ���� ��/���)
+		int ABCD[] = new int[4];			// Iuput/output values at each rounds(각 라운드 입/출력)
 		int T[] = new int[2];				// Temporary variable
 		int K[];
 
@@ -705,9 +705,9 @@ public class KISA_SEED_ECB {
 	private static final int ABCD_D = 3;
 
 	/**
-	@brief UserKey�� �̿��Ͽ� RoundKey ����
-	@param pbUserKey : RoundKey�� ������ �⺻ Ű
-	@param pdwRoundKey : pbUserKey�� �����Ǵ� ��� pdwRoundKey (32*4 byte)
+	@brief UserKey를 이용하여 RoundKey 생성
+	@param pbUserKey : RoundKey를 생성할 기본 키
+	@param pdwRoundKey : pbUserKey로 생성되는 결과 pdwRoundKey (32*4 byte)
 	*/
 	public static void SeedRoundKey(int[] pdwRoundKey /* [out] round keys for encryption or decryption */, byte[] pbUserKey/* [in] secret user key*/) {
 		int ABCD[] = new int[4];		// Iuput/output values at each rounds
@@ -924,11 +924,11 @@ public class KISA_SEED_ECB {
 
 		
 	    /**********************************************************************************************
-	     * ��� 1
+	     * 방법 1
 	     **********************************************************************************************/
 		
 		//System.out.print("[ Test Encrypt mode ]"+"\n");
-		//System.out.print("\n\n��� 1 \n[ Test Encrypt mode ]"+"\n\n");
+		//System.out.print("\n\n방법 1 \n[ Test Encrypt mode ]"+"\n\n");
 		System.out.print("Key\t\t: ");
 	    for (int i=0; i<16; i++)	System.out.print(Integer.toHexString(0xff&pbUserKey[i])+" ");
 	    System.out.print("\n");
@@ -991,10 +991,10 @@ public class KISA_SEED_ECB {
 
 	    
 	    /**********************************************************************************************
-	     * ��� 2
+	     * 방법 2
 	     **********************************************************************************************/
 	    
-		System.out.print("\n\n��� 2 \n[ Test Encrypt mode ]"+"\n");
+		System.out.print("\n\n방법 2 \n[ Test Encrypt mode ]"+"\n");
 		System.out.print("Key\t\t: ");
 	    for (int i=0; i<16; i++)	System.out.print(Integer.toHexString(0xff&pbUserKey[i])+" ");
 	    System.out.print("\n");
@@ -1003,7 +1003,7 @@ public class KISA_SEED_ECB {
 	    System.out.print("\n\n\n");	    
 	    
 	    /*********************************************************************
-	     * �׽�Ʈ���� 1
+	     * 테스트벡터 1
 	     *********************************************************************/
 	    
 	    int PLAINTEXT_LENGTH = 16;
@@ -1065,7 +1065,7 @@ public class KISA_SEED_ECB {
 		
 		
 	    
-	   //��ȣ
+	   //복호
 		
 
 	    CIPHERTEXT_LENGTH = 32;	
@@ -1147,7 +1147,7 @@ public class KISA_SEED_ECB {
 		
 		
 	    /*********************************************************************
-	     * �׽�Ʈ���� 2
+	     * 테스트벡터 2
 	     *********************************************************************/
 	    
 	    PLAINTEXT_LENGTH = 2;
@@ -1204,7 +1204,7 @@ public class KISA_SEED_ECB {
 		
 		
 	    
-	   //��ȣ
+	   //복호
 		
 
 	    CIPHERTEXT_LENGTH = 16;	
@@ -1284,7 +1284,7 @@ public class KISA_SEED_ECB {
 	    
 	    
 	    /*********************************************************************
-	     * �׽�Ʈ���� 3
+	     * 테스트벡터 3
 	     *********************************************************************/
 	    
 	    PLAINTEXT_LENGTH = 18;
@@ -1341,7 +1341,7 @@ public class KISA_SEED_ECB {
 		
 		
 	    
-	   //��ȣ
+	   //복호
 		
 
 	    CIPHERTEXT_LENGTH = 32;	
