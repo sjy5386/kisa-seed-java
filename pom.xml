@@ -19,6 +19,13 @@
         </license>
     </licenses>
 
+    <developers>
+        <developer>
+            <name>Seokjin Yoon</name>
+            <email>13289043+sjy5386@users.noreply.github.com</email>
+        </developer>
+    </developers>
+
     <scm>
         <connection>scm:git:git@github.com:sjy5386/${project.artifactId}.git</connection>
         <developerConnection>scm:git:git@github.com:sjy5386/${project.artifactId}.git</developerConnection>
