@@ -89,6 +89,40 @@
                     <publishingServerId>central</publishingServerId>
                 </configuration>
             </plugin>
+            <!--
+                개발용 예제 실행 (src/test/java 의 main 클래스, 배포 jar 에는 포함되지 않음)
+                mvn test-compile exec:java@ccm
+                mvn test-compile exec:java@cmac
+                mvn test-compile exec:java@gcm
+            -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <classpathScope>test</classpathScope>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>ccm</id>
+                        <configuration>
+                            <mainClass>com.sysbot32.kisa.seed.ccm.main</mainClass>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>cmac</id>
+                        <configuration>
+                            <mainClass>com.sysbot32.kisa.seed.cmac.main</mainClass>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>gcm</id>
+                        <configuration>
+                            <mainClass>com.sysbot32.kisa.seed.gcm.main</mainClass>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 </project>

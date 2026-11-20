@@ -30,3 +30,14 @@ Gradle (Kotlin)
 ```kotlin
 implementation("com.sysbot32:kisa-seed-java:1.0.0")
 ```
+
+## Development
+
+The KISA sample programs (`main` classes) are located in `src/test/java`, so they are not included in the published
+artifacts. Run them with:
+
+```shell
+mvn test-compile exec:java@ccm
+mvn test-compile exec:java@cmac
+mvn test-compile exec:java@gcm
+```
