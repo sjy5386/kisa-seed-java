@@ -15,20 +15,20 @@ Maven
 <dependency>
     <groupId>com.sysbot32</groupId>
     <artifactId>kisa-seed-java</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
 Gradle (Groovy)
 
 ```groovy
-implementation 'com.sysbot32:kisa-seed-java:1.0.0'
+implementation 'com.sysbot32:kisa-seed-java:1.0.1'
 ```
 
 Gradle (Kotlin)
 
 ```kotlin
-implementation("com.sysbot32:kisa-seed-java:1.0.0")
+implementation("com.sysbot32:kisa-seed-java:1.0.1")
 ```
 
 ## Development
